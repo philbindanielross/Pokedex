@@ -53,35 +53,18 @@ let pokemonList = [
   },
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height > 1.5) {
+pokemonList.forEach(function (pokemon) {
+  if (pokemon.height >= 1.5) {
     document.write(
-      pokemonList[i].name +
-        " (height:" +
-        pokemonList[i].height +
-        " meters) " +
-        " Big Pokemon... " +
-        " Wow, that's big! "
+      `${pokemon.name}: ${pokemon.height} meters tall. It is a big Pokemon. <br>`
     );
-  } else if (pokemonList[i].height > 0.5 && pokemonList[i].height <= 1.5) {
+  } else if (pokemon.height <= 0.5) {
     document.write(
-      pokemonList[i].name +
-        " (height:" +
-        pokemonList[i].height +
-        " meters) " +
-        " Medium-sized Pokemon... "
+      `${pokemon.name}: ${pokemon.height} meters tall. It is a small Pokemon. <br>`
     );
   } else {
     document.write(
-      pokemonList[i].name +
-        " (height:" +
-        pokemonList[i].height +
-        " meters) " +
-        " Small Pokemon... "
+      `${pokemon.name}: ${pokemon.height} meters tall. It is a medium-sized Pokemon. <br>`
     );
   }
-}
-// I want the pokemon to be split into three categories: small, medium and large.
-
-// Right now, the text is an ugly string of words that runs across the entire webpage. If this was HTML, it would be easy enough to style it with CSS, but not sure how to do that with text written with JavaScript.
-// for now, I added () and ... to help break up the list of Pokemon.
+});
