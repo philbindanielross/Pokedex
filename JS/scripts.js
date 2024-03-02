@@ -61,8 +61,6 @@ const pokemonRepository = (function () {
   };
 })();
 
-document.write(pokemonRepository.getAll());
-
 pokemonRepository.getAll().forEach(function (pokemon) {
   if (pokemon.height >= 1.5) {
     document.write(
