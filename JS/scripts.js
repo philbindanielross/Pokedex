@@ -66,10 +66,12 @@ const pokemonRepository = (function () {
     loadDetails: loadDetails,
   };
 })();
-
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
+
 //if (pokemon.height >= 1.5) {
 //   document.write(
 //     `${pokemon.name}: ${pokemon.height} meters tall. It is a big Pokemon. <br>`
