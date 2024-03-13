@@ -1,3 +1,4 @@
+//IIFE containing the pokemon respository and functions acting on it
 const pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
@@ -21,7 +22,7 @@ const pokemonRepository = (function () {
   }
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      console.log(pokemon); // change this?
     });
   }
   function loadList() {
@@ -66,72 +67,68 @@ const pokemonRepository = (function () {
     loadDetails: loadDetails,
   };
 })();
+//iterates over the pokemon repository list and adds a list item to it.
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
 
-//if (pokemon.height >= 1.5) {
-//   document.write(
-//     `${pokemon.name}: ${pokemon.height} meters tall. It is a big Pokemon. <br>`
-//   );
-// } else if (pokemon.height <= 0.5) {
-//   document.write(
-//     `${pokemon.name}: ${pokemon.height} meters tall. It is a small Pokemon. <br>`
-//   );
-// } else {
-//   document.write(
-//     `${pokemon.name}: ${pokemon.height} meters tall. It is a medium-sized Pokemon. <br>`
-//   );
-// }
-// [
-//   {
-//     name: "Ivysaur",
-//     height: 1,
-//     attack: 62,
-//     defense: 63,
-//     speed: 60,
-//     types: ["grass", "poison"],
-//   },
-//   {
-//     name: "Balbasaur",
-//     height: 0.7,
-//     attack: 49,
-//     defense: 49,
-//     speed: 45,
-//     types: ["grass", "poison"],
-//   },
-//   {
-//     name: "Squirtle",
-//     height: 0.5,
-//     attack: 48,
-//     defense: 65,
-//     speed: 43,
-//     types: ["water"],
-//   },
-//   {
-//     name: "Charizard",
-//     height: 1.7,
-//     attack: 84,
-//     defense: 78,
-//     speed: 100,
-//     types: ["fire", "flying"],
-//   },
-//   {
-//     name: "Beedrill",
-//     height: 1,
-//     attack: 90,
-//     defense: 40,
-//     speed: 75,
-//     types: ["bug", "poison"],
-//   },
-//   {
-//     name: "Paras",
-//     height: 0.3,
-//     attack: 70,
-//     defense: 55,
-//     speed: 25,
-//     types: ["grass", "bug"],
-//   },
-// ]
+//modal window functionality:
+(function () {
+  function showModal(title, text) {
+    let modalContainer = document.querySelector(".modal-container");
+
+    // Clear all existing modal content //why do we need to do this?
+    modalContainer.innerHTML = "";
+
+    let modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    // Add the new modal content
+    let closeButtonElement = document.createElement("button");
+    closeButtonElement.classList.add("modal-close");
+    closeButtonElement.innerText = "Close";
+    closeButtonElement.addEventListener("click", hideModal);
+
+    let titleElement = document.createElement("h1");
+    titleElement.innerText = title;
+
+    let contentElement = document.createElement("p");
+    contentElement.innerText = text;
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add("is-visible");
+
+    modalContainer.addEventListener("click", (e) => {
+      // Since this is also triggered when clicking INSIDE the modal
+      // We only want to close if the user clicks directly on the overlay
+      let target = e.target;
+      if (target === modalContainer) {
+        hideModal();
+      }
+    });
+  }
+
+  function hideModal() {
+    let modalContainer = document.querySelector(".modal-container");
+    modalContainer.classList.remove("is-visible");
+  }
+
+  window.addEventListener("keydown", (e) => {
+    let modalContainer = document.querySelector(".modal-container");
+    if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+      hideModal();
+    }
+  });
+
+  document.querySelector("#show-modal").addEventListener("click", () => {
+    showModal(pokemon.name + pokemon.height); //how do I add the image?
+  });
+
+  // THE RETURN STATEMENT HERE
+})();
