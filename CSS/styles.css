@@ -1,6 +1,6 @@
 /* styles */
-.pokemon-list {
-  list-style: none;
+.hidden {
+  display: none;
 }
 .pokemon-item {
   background-color: #fffefc;
@@ -13,11 +13,10 @@
 .pokemon-item:hover {
   border: 4px solid #0075be;
   background-color: #ffcc00;
+  cursor: pointer;
 }
-/* .modal-container {
-  display: none;
-} */
-.modal-container.is-visible {
+
+.modal-container {
   background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
@@ -25,6 +24,7 @@
   text-align: center;
   position: fixed;
   box-sizing: border-box;
+  top: 0;
 }
 .modal {
   margin: auto;
@@ -36,4 +36,12 @@
   max-width: 700px;
   border: 2px solid #0075be;
   border-radius: 4px;
+  margin: 20%;
+}
+.close-modal {
+  border: none;
+  background-color: #999;
+  height: 24px;
+  width: 24px;
+  float: right;
 }
