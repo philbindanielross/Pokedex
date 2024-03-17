@@ -26,6 +26,7 @@ const pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
+      showModal(pokemon.name, `Height: ${pokemon.height}`, pokemon.imageURL);
     });
   }
 
@@ -77,6 +78,8 @@ const pokemonRepository = (function () {
     pokemonHeight.innerText = height;
 
     const pokemonImg = document.createElement("img");
+    pokemonImg.setAttribute("src", img);
+    pokemonImg.setAttribute("alt", "Poke-IMG");
     pokemonImg.src = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //HOW DO I FIND THE ACTUAL IMAGE URL?
 
     const btnCloseModal = document.createElement("button");
@@ -87,7 +90,7 @@ const pokemonRepository = (function () {
     });
     modal.innerHTML = ""; // Clear existing modal content
     modal.appendChild(pokemonName);
-    modal.appendChild(pokemonDescription);
+    modal.appendChild(pokemonHeight);
     modal.appendChild(pokemonImg);
     modal.appendChild(btnCloseModal);
 
@@ -118,7 +121,7 @@ const pokemonRepository = (function () {
         const pokemonName = pokemonItem.innerText;
         const pokemonHeight = pokemonItem.pokemon.height;
         const pokemonImageUrl = pokemonItem.pokemon.imageUrl;
-        showModal(pokemon.name, pokemon.height, pokemon.imgURL);
+        showModal(pokemon[i].name, pokemon[i].height, pokemon[i].imgURL);
       }
     });
   });
