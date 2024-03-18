@@ -80,7 +80,8 @@ const pokemonRepository = (function () {
     const pokemonImg = document.createElement("img");
     pokemonImg.setAttribute("src", img);
     pokemonImg.setAttribute("alt", "Poke-IMG");
-    pokemonImg.src = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //HOW DO I FIND THE ACTUAL IMAGE URL?
+    pokemonImg.src = "pokemonIMG.avif"; //HOW DO I FIND THE ACTUAL IMAGE URL?
+    pokemonImg.classList.add("img-class");
 
     const btnCloseModal = document.createElement("button");
     btnCloseModal.classList.add("close-modal");
