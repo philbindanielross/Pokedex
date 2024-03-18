@@ -83,7 +83,7 @@ const pokemonRepository = (function () {
     pokemonImg.src = "https://pokeapi.co/api/v2/pokemon/?limit=150"; //HOW DO I FIND THE ACTUAL IMAGE URL?
 
     const btnCloseModal = document.createElement("button");
-    btnCloseModal.classList.add("modal-close");
+    btnCloseModal.classList.add("close-modal");
     btnCloseModal.innerText = "X";
     btnCloseModal.addEventListener("click", function () {
       modalContainer.classList.add("hidden");
