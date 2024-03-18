@@ -80,7 +80,7 @@ const pokemonRepository = (function () {
     const pokemonImg = document.createElement("img");
     pokemonImg.setAttribute("src", img);
     pokemonImg.setAttribute("alt", "Poke-IMG");
-    pokemonImg.src = "pokemonIMG.avif"; //HOW DO I FIND THE ACTUAL IMAGE URL?
+    //pokemonImg.src = "pokemonImageUrl"; // I MODIFIED THE EVENT LISTENER TO pokemon.imageURL AND COMMENTED OUT THIS LINE. BUT I DON'T UNDERSTAND WHY THIS WORKED TO FIX THE PROBLEM
     pokemonImg.classList.add("img-class");
 
     const btnCloseModal = document.createElement("button");
@@ -122,7 +122,7 @@ const pokemonRepository = (function () {
         const pokemonName = pokemonItem.innerText;
         const pokemonHeight = pokemonItem.pokemon.height;
         const pokemonImageUrl = pokemonItem.pokemon.imageUrl;
-        showModal(pokemon[i].name, pokemon[i].height, pokemon[i].imgURL);
+        showModal(pokemon.name, `Height: ${pokemon.height}`, pokemon.imageURL);
       }
     });
   });
