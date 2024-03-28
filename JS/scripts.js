@@ -15,7 +15,11 @@ const pokemonRepository = (function () {
     let listItem = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
-    button.classList.add("pokemon-item");
+    listItem.classList.add("list-group-item");
+    //When I add ariaLabel, the list of Pokemon items disappears. Not sure how to make this accessible, or why this ariaLabel would cause the list items to disappear.
+    //listItem.ariaLabel.add("Pokemon-item");
+    //When I add any class to the button, the buttons completely disappear
+    button.classList.add("pokemon-item-btn");
     listItem.appendChild(button);
     ListOfPokemon.appendChild(listItem);
     button.addEventListener("click", function (event) {
@@ -151,6 +155,7 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
 //modal window functionality:
 // (function () {
 //   function showModal(title, text) {
