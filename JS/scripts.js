@@ -16,10 +16,7 @@ const pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     listItem.classList.add("list-group-item");
-    //When I add ariaLabel, the list of Pokemon items disappears. Not sure how to make this accessible, or why this ariaLabel would cause the list items to disappear.
-    //listItem.ariaLabel.add("Pokemon-item");
-    //When I add any class to the button, the buttons completely disappear
-    button.classList.add("pokemon-item-btn");
+    button.classList.add("pokemon-item-btn", "btn");
     listItem.appendChild(button);
     ListOfPokemon.appendChild(listItem);
     button.addEventListener("click", function (event) {
@@ -69,11 +66,11 @@ const pokemonRepository = (function () {
       });
   }
 
-  //MODAL WINDOW FUNCTIONALITY
+  //MODAL WINDOW FUNCTIONALITY (called line 129)
 
   function showModal(title, height, img) {
     const modalContainer = document.querySelector(".modal-container");
-    const modal = document.querySelector(".modal");
+    const modal = document.querySelector(".modal-dialog");
 
     const pokemonName = document.createElement("h1");
     pokemonName.innerText = title;
@@ -103,7 +100,7 @@ const pokemonRepository = (function () {
   }
   // Load modal window functionality after the DOM is loaded (I DON'T UNDERSTAND THIS, BUT CHAT GPT TOLD ME THIS WAS WHY MY CODE WASN'T WORKING)
   document.addEventListener("DOMContentLoaded", function () {
-    const modalWindow = document.querySelector(".modal");
+    const modalWindow = document.querySelector(".modal-dialog");
     const overlay = document.querySelector(".modal-container");
     const btnCloseModal = document.querySelector(".close-modal");
 

@@ -40,7 +40,35 @@
     </div>
 
     <!-- THE MODAL -->
-    <div class="modal-container hidden">
+    <div class="modal modal-container hidden" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button
+              type="button"
+              class="btn-close close-modal"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="modal-container hidden">
       <div class="modal" aria-label="modal">
         <button type="button" class="close-modal" aria-label="Close">
           <span aria-hidden="true">X</span>
@@ -54,7 +82,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"

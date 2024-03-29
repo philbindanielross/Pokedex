@@ -2,6 +2,9 @@
 .navbar {
   background-color: #444;
 }
+.form-control {
+  margin: 8px;
+}
 .search {
   color: #fff;
   background-color: #0075be;
@@ -16,6 +19,9 @@
   display: none;
 }
 .pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 8px;
   list-style: none;
 }
 .pokemon-item-btn {
@@ -44,8 +50,7 @@
   top: 0;
   z-index: 9999;
 }
-.modal {
-  /* How do I center the modal in the screen? If I try giving numbered pixel margins, it hugs the bottom of the screen, and if I set it to auto, it is almost at the very top */
+.modal-dialog {
   margin: auto, 24px;
   display: inline-block;
   box-sizing: border-box;
@@ -56,25 +61,34 @@
   max-width: 600px;
   border: 2px solid #0075be;
   border-radius: 4px;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .modal h1 {
   text-transform: capitalize;
 }
 .close-modal {
   position: absolute;
-  font-weight: 900;
+  font-weight: 400;
+  font-size: 24px;
   border: none;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 32px;
   width: 32px;
-  top: -12px;
-  right: -12px;
+  top: 16px;
+  right: 16px;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .close-modal:hover {
   cursor: pointer;
+  background-color: #d2d2d2;
 }
 .img-class {
   width: 200px;
@@ -86,4 +100,22 @@ h1 {
 }
 p {
   font-size: 16px;
+}
+/* RESPONSIVE */
+@media all and (max-width: 800px) {
+  .form-control {
+    max-width: 120px;
+  }
+  .pokemon-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .form-control {
+    max-width: 80px;
+  }
+  .pokemon-list {
+    grid-template-columns: repeat(1, auto);
+  }
 }
