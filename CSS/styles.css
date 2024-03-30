@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.modal-container {
+/* .modal-container {
   background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 100%;
@@ -49,9 +49,15 @@
   box-sizing: border-box;
   top: 0;
   z-index: 9999;
+} */
+.modal {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 9999;
 }
 .modal-dialog {
-  margin: auto, 24px;
+  margin: auto;
   display: inline-block;
   box-sizing: border-box;
   background-color: #fffefc;
@@ -62,9 +68,9 @@
   border: 2px solid #0075be;
   border-radius: 4px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 25%;
+  /* transform: translate(-50%, -50%); */
 }
 .modal h1 {
   text-transform: capitalize;

@@ -17,6 +17,9 @@ const pokemonRepository = (function () {
     button.innerText = pokemon.name;
     listItem.classList.add("list-group-item");
     button.classList.add("pokemon-item-btn", "btn");
+    //Why does this work, but button.setAttribute("data-target", "#pokemon-modal", "data-toggle", "modal"); doesn't work?
+    button.setAttribute("data-target", "#pokemon-modal");
+    button.setAttribute("data-toggle", "modal");
     listItem.appendChild(button);
     ListOfPokemon.appendChild(listItem);
     button.addEventListener("click", function (event) {

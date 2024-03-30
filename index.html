@@ -19,7 +19,6 @@
     <nav class="navbar sticky-top navbar-dark" aria-label="navigation">
       <a href="index.html" class="navbar-brand">POKEDEX</a>
       <form class="form-inline">
-        <!-- How can I adjust this so the input field shrinks to something like 80px on mobile screens, so that it stays to the left of the Search button? I also want to replace the placeholder word "search" for a search icon (magnifying glass) on mobile screen sizes -->
         <input
           class="form-control col-12 col-sm-8 mr-sm-2"
           type="search"
@@ -40,26 +39,34 @@
     </div>
 
     <!-- THE MODAL -->
-    <div class="modal modal-container hidden" tabindex="-1">
-      <div class="modal-dialog">
+
+    <div
+      class="modal fade"
+      id="pokemon-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="pokemon-modal-label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"></h5>
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button
               type="button"
-              class="btn-close close-modal"
-              data-bs-dismiss="modal"
+              class="close"
+              data-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="modal-body">
-            <p></p>
-          </div>
+          <div class="modal-body"></div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              data-dismiss="modal"
             >
               Close
             </button>
@@ -67,22 +74,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="modal-container hidden">
-      <div class="modal" aria-label="modal">
-        <button type="button" class="close-modal" aria-label="Close">
-          <span aria-hidden="true">X</span>
-        </button>
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title"></h2>
-          </div>
-          <div class="modal-body">
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
