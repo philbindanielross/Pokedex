@@ -45,8 +45,25 @@ p {
   background-color: #ffcc00;
   cursor: pointer;
 }
+/* Modal */
 
-/* MODAL */
+/* .modal-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+  text-align: center;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 9999;
+} */
+/* .modal {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 9999;
+} */
 .modal-dialog {
   margin-top: 120px;
   background-color: #fffefc;
@@ -65,9 +82,15 @@ p {
   margin-top: 24px;
   grid-column: span 2;
 }
-
+/* .modal-body {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: repeat(4, auto);
+} */
 .close {
   position: absolute;
+  /* font-weight: 400;
+  font-size: 24px; */
   border: none;
   background-color: #fff;
   height: 32px;
@@ -84,6 +107,7 @@ p {
 .img-class {
   width: 200px;
   height: auto;
+  /* grid-row: span 4; */
 }
 .display-2 {
   margin-top: 40px;
