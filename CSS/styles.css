@@ -57,13 +57,18 @@ p {
   border-radius: 8px;
 }
 .modal-content {
-  display: grid;
-  grid-template-columns: 1fr, 1fr;
+  display: flex;
+  flex-direction: column;
+}
+/* modal header */
+.modal-header {
+  display: flex;
+  text-align: left;
 }
 .modal h1 {
   text-transform: capitalize;
   margin-top: 24px;
-  grid-column: span 2;
+  /* grid-column: span 2; */
 }
 
 .close {
@@ -80,6 +85,11 @@ p {
   cursor: pointer;
   background-color: #ffcc00;
   border: #0075be;
+}
+/* modal body */
+.modal-body {
+  display: flex;
+  justify-content: space-between;
 }
 .img-class {
   width: 200px;
