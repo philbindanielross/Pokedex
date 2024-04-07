@@ -16,6 +16,7 @@ p {
 }
 .modal-dialog,
 .pokemon-item-btn {
+  pointer-events: all;
   background-color: #fffefc;
   width: 100%;
 }
@@ -24,7 +25,7 @@ p {
   background-color: #fff;
   cursor: pointer;
 }
-.close:hover,
+
 .pokemon-item-btn:hover {
   cursor: pointer;
   background-color: #fc0;
@@ -55,31 +56,28 @@ p {
   border: 4px solid #0075be;
   border-radius: 8px;
 }
+.close {
+  border-radius: 50%;
+  margin: 0px;
+  padding: 0px;
+}
+.close:hover {
+  cursor: pointer;
+}
 .modal-content {
   display: flex;
   flex-direction: column;
 }
 .modal-header {
   display: flex;
-  text-align: left;
+  align-items: center;
+  justify-content: space-between;
 }
-.modal h1 {
+.modal h2 {
   text-transform: capitalize;
   margin-top: 24px;
 }
-.close {
-  position: absolute;
-  border: none;
-  background-color: #fff;
-  height: 32px;
-  width: 32px;
-  top: 16px;
-  right: 16px;
-  border-radius: 50%;
-}
-.close:hover {
-  border: #0075be;
-}
+
 .modal-body {
   display: flex;
   justify-content: space-between;

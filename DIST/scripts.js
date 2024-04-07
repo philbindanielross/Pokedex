@@ -23,45 +23,38 @@ const pokemonRepository = (function () {
         console.error(e);
       });
   }
-  function a(e) {
-    let t = document.querySelector(".modal-container"),
-      n = document.querySelector(".modal-dialog"),
-      i = document.querySelector(".modal-content"),
-      a = document.querySelector(".modal-header"),
+  function o(e) {
+    document.querySelector(".modal-container");
+    let t = document.querySelector(".modal-dialog"),
+      n = document.querySelector(".modal-content"),
+      i = document.querySelector(".modal-title"),
       o = document.querySelector(".modal-footer"),
-      l = document.querySelector(".modal-body"),
-      d = document.createElement("h1");
-    d.innerText = e.name;
-    let r = document.querySelector(".modal-text"),
-      s = document.createElement("p");
-    s.innerHTML = `<b>Height:</b> ${e.height} meters`;
+      a = document.querySelector(".modal-body");
+    i.innerText = e.name;
+    let l = document.querySelector(".modal-text"),
+      r = document.createElement("p");
+    r.innerHTML = `<b>Height:</b> ${e.height} meters`;
+    let d = document.createElement("p");
+    d.innerHTML = `<b>Type:</b> ${e.type}`;
+    let s = document.createElement("p");
+    s.innerHTML = `<b>Weight:</b> ${e.weight} lbs`;
     let c = document.createElement("p");
-    c.innerHTML = `<b>Type:</b> ${e.type}`;
-    let p = document.createElement("p");
-    p.innerHTML = `<b>Weight:</b> ${e.weight} lbs`;
-    let m = document.createElement("p");
-    m.innerHTML = `<b>Abilities:</b> ${e.abilities}`;
-    let u = document.createElement("img");
-    u.setAttribute("src", e.imageURL),
-      u.setAttribute("alt", "Poke-IMG"),
-      u.classList.add("img-class"),
-      (n.innerHTML = ""),
-      (i.innerHTML = ""),
-      (a.innerHTML = ""),
-      (r.innerHTML = ""),
+    c.innerHTML = `<b>Abilities:</b> ${e.abilities}`;
+    let p = document.createElement("img");
+    p.setAttribute("src", e.imageURL),
+      p.setAttribute("alt", "Poke-IMG"),
+      p.classList.add("img-class"),
       (l.innerHTML = ""),
-      n.appendChild(i),
-      i.appendChild(a),
-      i.appendChild(l),
-      i.appendChild(o),
-      a.appendChild(d),
+      (a.innerHTML = ""),
+      t.appendChild(n),
+      n.appendChild(a),
+      n.appendChild(o),
+      a.appendChild(l),
       l.appendChild(r),
-      r.appendChild(s),
-      r.appendChild(p),
-      r.appendChild(c),
-      r.appendChild(m),
-      l.appendChild(u),
-      t.classList.remove("hidden");
+      l.appendChild(s),
+      l.appendChild(d),
+      l.appendChild(c),
+      a.appendChild(p);
   }
   return (
     document.addEventListener("DOMContentLoaded", function () {
@@ -79,7 +72,7 @@ const pokemonRepository = (function () {
         document.addEventListener("click", function (e) {
           if (e.target.classList.contains("pokemon-item")) {
             let t = e.target;
-            t.innerText, a(pokemon);
+            t.innerText, o(pokemon);
           }
         });
     }),
@@ -94,19 +87,19 @@ const pokemonRepository = (function () {
       getAll: n,
       addListItem: function e(t) {
         let n = document.querySelector(".pokemon-list"),
-          o = document.createElement("li"),
+          a = document.createElement("li"),
           l = document.createElement("button");
         (l.innerText = t.name),
-          o.classList.add("list-group-item"),
+          a.classList.add("list-group-item"),
           l.classList.add("pokemon-item-btn", "btn"),
           l.setAttribute("data-target", "#pokemon-modal"),
           l.setAttribute("data-toggle", "modal"),
-          o.appendChild(l),
-          n.appendChild(o),
+          a.appendChild(l),
+          n.appendChild(a),
           l.addEventListener("click", function (e) {
             (function e(t) {
               i(t).then(function () {
-                a(t);
+                o(t);
               });
             })(t);
           });

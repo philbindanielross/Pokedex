@@ -80,12 +80,12 @@ const pokemonRepository = (function () {
     const modalContainer = document.querySelector(".modal-container");
     const modal = document.querySelector(".modal-dialog");
     const modalContent = document.querySelector(".modal-content");
-    const modalHeader = document.querySelector(".modal-header");
+    const modalHeader = document.querySelector(".modal-title");
     const modalFooter = document.querySelector(".modal-footer");
     const modalBody = document.querySelector(".modal-body");
 
-    const pokemonName = document.createElement("h1");
-    pokemonName.innerText = pokemon.name;
+    //const pokemonName = document.createElement("h1");
+    modalHeader.innerText = pokemon.name;
 
     const modalText = document.querySelector(".modal-text");
 
@@ -110,18 +110,18 @@ const pokemonRepository = (function () {
     // btnCloseModal.addEventListener("click", function () {
     //   modalContainer.classList.add("hidden");
     // });
-    modal.innerHTML = ""; // Clear existing modal content
-    modalContent.innerHTML = "";
-    modalHeader.innerHTML = "";
+    //modal.innerHTML = ""; // Clear existing modal content
+    //modalContent.innerHTML = "";
+    //modalHeader.innerHTML = "";
     modalText.innerHTML = "";
     modalBody.innerHTML = "";
     modal.appendChild(modalContent);
 
-    modalContent.appendChild(modalHeader);
+    //modalContent.appendChild(modalHeader);
     modalContent.appendChild(modalBody);
     modalContent.appendChild(modalFooter);
 
-    modalHeader.appendChild(pokemonName);
+    //modalHeader.appendChild(pokemonName);
 
     modalBody.appendChild(modalText);
     modalText.appendChild(pokemonHeight);
@@ -132,7 +132,7 @@ const pokemonRepository = (function () {
 
     //modal.appendChild(btnCloseModal);
 
-    modalContainer.classList.remove("hidden"); // Show modal by removing "hidden" class
+    // modalContainer.classList.remove("hidden"); // Show modal by removing "hidden" class
   }
   // Load modal window functionality after the DOM is loaded (I DON'T UNDERSTAND THIS, BUT CHAT GPT TOLD ME THIS WAS WHY MY CODE WASN'T WORKING)
   document.addEventListener("DOMContentLoaded", function () {
